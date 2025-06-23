@@ -1,24 +1,62 @@
 import turtle
 
-turtle.speed(5)
-turtle.bgcolor('black')
-turtle.pensize(3)
+def curve(step_forward: int, step_steer: int, distance: int, is_right: bool):
+  for i in range(distance):
+    if is_right:
+      turtle.right(step_steer)
+    else:
+      turtle.left(step_steer)
+    turtle.forward(step_forward)
 
-def func():
-    for i in range(200):
-        turtle.right(1)
-        turtle.forward(1)
+def heart():
+  turtle.color('red', 'red')
+  turtle.begin_fill()
 
-turtle.color('red', 'pink')
-turtle.begin_fill()
+  turtle.left(140)
+  turtle.forward(111.65)
 
-turtle.left(140)
-turtle.forward(111.65)
-func()
-turtle.left(120)
-func()
-turtle.forward(111.65)
+  curve(2, 2, 100, True)
 
-turtle.end_fill()
-turtle.hideturtle()
-turtle.done()
+  turtle.left(120)
+
+  curve(2, 2, 100, True)
+
+  turtle.forward(111.65)
+
+  turtle.end_fill()
+
+  turtle.penup()
+  turtle.pensize(15)
+  turtle.color('white')
+
+if __name__ == '__main__':
+  turtle.speed(1)
+  turtle.bgcolor('black')
+  turtle.pensize(3)
+
+  # heartu
+  heart()
+
+  # I
+  turtle.goto(-200, 170)
+  turtle.pendown()
+  turtle.goto(-160, 170)
+  turtle.penup()
+  turtle.goto(-180, 170)
+  turtle.left(50)
+  turtle.pendown()
+  turtle.forward(170)
+  turtle.penup()
+  turtle.goto(-200, 0)
+  turtle.pendown()
+  turtle.goto(-160, 0)
+
+  # U
+  turtle.penup()
+  turtle.goto(160, 170)
+  turtle.pendown()
+  turtle.forward(110)
+  curve(2, 2, 90, False)
+  turtle.forward(107)
+
+  turtle.done()
