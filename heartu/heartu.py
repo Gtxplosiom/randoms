@@ -25,12 +25,8 @@ def heart():
 
   turtle.end_fill()
 
-  turtle.penup()
-  turtle.pensize(15)
-  turtle.color('white')
-
 if __name__ == '__main__':
-  turtle.speed(1)
+  turtle.speed(2)
   turtle.bgcolor('black')
   turtle.pensize(3)
 
@@ -38,6 +34,9 @@ if __name__ == '__main__':
   heart()
 
   # I
+  turtle.penup()
+  turtle.pensize(15)
+  turtle.color('white')
   turtle.goto(-200, 170)
   turtle.pendown()
   turtle.goto(-160, 170)
@@ -57,6 +56,6 @@ if __name__ == '__main__':
   turtle.pendown()
   turtle.forward(110)
   curve(2, 2, 90, False)
-  turtle.forward(107)
+  turtle.forward(108)
 
   turtle.done()
